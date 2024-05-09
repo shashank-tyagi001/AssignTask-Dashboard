@@ -1,0 +1,25 @@
+Schema::create('daily_reports', function (Blueprint $table) {
+    $table->id();
+    $table->unsignedBigInteger('user_id');
+    $table->foreign('user_id')->references('id')->on('users');
+    $table->string('project-name');
+    $table->date('today_date');
+    $table->text('firstPhase');
+    $table->text('secondPhase');
+    $table->text('thirdPhase');
+    $table->text('fourthPhase');
+    $table->timestamps();
+});
+
+
+public $timestamps = false;
+
+    protected $fillable = [
+        'user_id',
+        'project_name',
+        'today_date',
+        'firstPhase',
+        'secondPhase',
+        'thirdPhase',
+        'fourthPhase'
+    ];
